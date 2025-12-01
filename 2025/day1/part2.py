@@ -24,7 +24,7 @@ with open(file,"r") as file:
                 q+=1
 
         cpt0 += abs(q)
-        if pos==0 and previous_pos!=0 and pos<previous_pos and q<=0:
+        if pos==0 and previous_pos!=0 and q<=0: # and pos<previous_pos 
             cpt0+=1
         
         print(f"cpt0:{cpt0}")
