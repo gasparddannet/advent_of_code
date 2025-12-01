@@ -19,7 +19,7 @@ with open(file,"r") as file:
         q = pos//100
         pos = pos%100
         print(f"dir:{dir}, num:{num}\told_pos:{previous_pos}, q:{q}, pos:{pos}")
-        if previous_pos == 0:
+        if previous_pos == 0 and pos!=0:                # bug quand pos=0, dir=-1 and num=100 ?
             if q<0:
                 q+=1
 
