@@ -4,7 +4,7 @@ import timeit
 file = "input"
 
 ##############
-### Part 1 ###
+### Part 2 ###
 ##############
 
 def get_invalid_ids(first_id, last_id):
@@ -12,12 +12,14 @@ def get_invalid_ids(first_id, last_id):
     for i in range(int(first_id), int(last_id)+1):
         i = str(i)
         # print("len(i):",len(i))
-        if len(i)%2==0:
-            m = len(i)//2
-            if i[:m] == i[m:]:
-                # print("qqqqqqq")
-                # print("i:",i)
-                sum_inv_ids +=  int(i)
+        # print("i:",i)
+        for k in range(1,len(i)):
+            # print("k:",k)
+            if len(i)%k==0:
+                if i[:k] * (len(i)//k) == i:
+                    # print("i:",i)
+                    sum_inv_ids += int(i)
+                    break
     return sum_inv_ids
 
 start = timeit.default_timer()
